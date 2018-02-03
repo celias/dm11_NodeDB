@@ -16,20 +16,22 @@ class App extends Component {
   }
 
   this.artObj = this.artObj.bind(this);
+  
   // this.randomArt = this.randomArt.bind(this);
 };
 
   componentDidMount(){ //Asynchronous requests
     axios.get('/api/apiData')
     .then(response => {
-      this.setState({ artObj: response.data })
+      console.log(response.data)
+      this.setState({ artObj: response.data._embedded.artists })
     }).catch(console.log);
   }
 
   artObj(){
    axios.get('/api/getSomeArt')
     .then(response => {
-    this.setState({ artObj: response.data })
+    this.setState({ artObj: response.data._embedded.artists })
    }).catch(console.log);
 }
 
@@ -41,7 +43,18 @@ class App extends Component {
   // }
 
 render() {
- console.log(this.state.artObj)
+//  console.log(this.state.artObj)
+ 
+ let newArtObj = this.state.artObj.map((artObj, i) => {
+   return(
+      <div key={i} >
+        <p>{artObj.id}</p>
+        <p>{artObj.name}</p>
+        <p>{artObj.slug}</p>
+        {/* <img>{artObj.image_versions}</img> */}
+        </div> 
+   )
+  });
 
 
     return (
@@ -50,10 +63,12 @@ render() {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">fuck my life</h1>
         </header>
-        {/* <h1 className="App-intro">{this.state.artObj}</h1> */}
+        
         <p className="App-intro">
+        
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        {newArtObj}
       
 
 
