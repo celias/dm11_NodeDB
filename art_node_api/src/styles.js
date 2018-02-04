@@ -19,14 +19,15 @@ margin-right: 5%;
 
 export const NavLink = styled.nav`
 display: grid;
-grid-template-colums: (2 10%);
+grid-template-columns: (2, 30%);
 border: white solid 3px;
 color: white;
 `
 
 export const AppHeader = styled.header`
-max-width: 940px;
+max-width: 10px;
   margin: 0 20px;
   display: grid;
+  grid-template-rows: (3, 10%);
   grid-gap: 10px;
 `

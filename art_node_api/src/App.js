@@ -53,19 +53,19 @@ render() {
 
     return (
       <div className="App">
-        <AppHeader>
-          <img src={logo} className="App-logo" alt="logo" />
-          <NavLink>Home</NavLink>
-          <NavLink>Home</NavLink>
-          <NavLink>Hell</NavLink>
           <AppTitle>fuck my life</AppTitle>
-        </AppHeader>
+          <img src={logo} className="App-logo" alt="logo" />
+        <NavLink>
+          Home
+          Home
+          Hell
+        </NavLink>
         
-        <p className="App-intro">
         
-          <AppTitle>GO TO HELL BRYCE</AppTitle>
-        </p>
-        {newArtObj}
+        
+          <AppTitle>##############</AppTitle>
+        
+        {/* {newArtObj} */} 
         
        
         <GridContainer>{newArtImg}</GridContainer>
