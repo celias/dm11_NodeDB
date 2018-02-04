@@ -11,7 +11,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      artObj: []
+      artObj: [], 
+      artImgs: []
   }
 
 };
@@ -29,14 +30,23 @@ render() {
  
  let newArtObj = this.state.artObj.map((artObj, i) => {
    return(
-      <div key={i} >
-        <p>{artObj.id}</p>
-        <p>{artObj.name}</p>
-        <p>{artObj.slug}</p>
-       
+      <div key={i}>
+        {/* {/* <p>{artObj.id}</p> */}
+        {/* <p>{artObj.name}</p> */}
+        {/* <img alt="art">{artObj._links.thumbnail.href}</img> */}
+        {/* <p>{artObj.slug}</p> */}
+        {/* <p>{artObj.image_versions}</p> */}
         </div> 
    )
   });
+
+  let newArtImg = this.state.artObj.map((artObj, i) => {
+    return(
+      <div key={i}>
+      <img src={artObj._links.thumbnail.href} alt="art"></img>
+      </div>
+    )
+  })
 
 
     return (
@@ -48,9 +58,10 @@ render() {
         
         <p className="App-intro">
         
-          To get started, edit <code>src/App.js</code> and save to reload.
+          GO TO HELL BRYCE
         </p>
         {newArtObj}
+        {newArtImg}
       
 
 
