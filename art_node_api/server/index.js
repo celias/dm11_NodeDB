@@ -4,7 +4,7 @@ const cors = require('cors');
 const axios = require('axios');
 
 const { clientSecret1, clientSecret, clientID, apiUrl } = require('./config');
-const { getArtsy, artObj } = require('./controllers/mainControl');
+const { getArtsy } = require('./controllers/mainControl');
 
 
 
@@ -15,8 +15,7 @@ app.use(cors());
 
 
 app.get('/api/apiData', getArtsy);
-axios.get('/api/getSomeArt', artObj);
-// axios.get('/api/getSomeRandomArt', randomArt);
+
 
 
 

@@ -13,17 +13,7 @@ const getArtsy = (req, res, next) => {
           }).catch(console.log);
       };
 
-const artObj = (req, res, next) => {
-    axios.get(`https://api.artsy.net/api/artists?size=30&page=1`).then(response => {
-        return res.json(response.data);
-    }).catch(console.log);
-}
-
-// const randomArt = (req, res, next) => {
-//     axios.get()
-// }
     
 module.exports = {
-    getArtsy,
-    artObj
+    getArtsy
 };

@@ -11,13 +11,9 @@ class App extends Component {
     super(props);
 
     this.state = {
-      artObj: [],
-      randomArt: []
+      artObj: []
   }
 
-  this.artObj = this.artObj.bind(this);
-  
-  // this.randomArt = this.randomArt.bind(this);
 };
 
   componentDidMount(){ //Asynchronous requests
@@ -27,20 +23,6 @@ class App extends Component {
       this.setState({ artObj: response.data._embedded.artists })
     }).catch(console.log);
   }
-
-  artObj(){
-   axios.get('/api/getSomeArt')
-    .then(response => {
-    this.setState({ artObj: response.data._embedded.artists })
-   }).catch(console.log);
-}
-
-  // randomArt(){
-  //   axios.get('/api/getSomeRandomArt')
-  //    .then(response => {
-  //      this.setState({ randomArt: response.data })
-  //    }).catch(console.log);
-  // }
 
 render() {
 //  console.log(this.state.artObj)
