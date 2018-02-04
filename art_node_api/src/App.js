@@ -4,6 +4,8 @@ import './App.css';
 
 import axios from 'axios';
 
+import { AppTitle, GridContainer } from './styles';
+
 
 
 class App extends Component {
@@ -53,15 +55,17 @@ render() {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">fuck my life</h1>
+          <AppTitle>fuck my life</AppTitle>
         </header>
         
         <p className="App-intro">
         
-          GO TO HELL BRYCE
+          <AppTitle>GO TO HELL BRYCE</AppTitle>
         </p>
         {newArtObj}
-        {newArtImg}
+        
+       
+        <GridContainer>{newArtImg}</GridContainer>
       
 
 
