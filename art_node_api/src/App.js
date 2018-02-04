@@ -4,7 +4,7 @@ import './App.css';
 
 import axios from 'axios';
 
-import { AppTitle, GridContainer } from './styles';
+import { AppTitle, GridContainer, NavLink } from './styles';
 
 
 
@@ -55,6 +55,9 @@ render() {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
+          <NavLink>Home</NavLink>
+          <NavLink>Home</NavLink>
+          <NavLink>Hell</NavLink>
           <AppTitle>fuck my life</AppTitle>
         </header>
         
