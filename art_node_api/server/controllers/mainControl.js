@@ -8,7 +8,8 @@ axios
   }).catch(console.log);
 
 const getArtsy = (req, res, next) => {
-    axios.get(`https://api.artsy.net/api/artists?size=30&page=1`).then(response => {
+    axios.get(`https://api.artsy.net/api/artists?similarity_type=contemporary&artworks=true&size=30&page=1`).then(response => {
+        console.log(response.data)
         return res.json(response.data);
           }).catch(console.log);
       };
@@ -17,3 +18,4 @@ const getArtsy = (req, res, next) => {
 module.exports = {
     getArtsy
 };
+// https://api.artsy.net/api/artists?similarity_type=contemporary&artworks=true&published_artworks=true&size=5&page=1

@@ -20,12 +20,12 @@ class App extends Component {
     axios.get('/api/apiData')
     .then(response => {
       console.log(response.data)
-      this.setState({ artObj: response.data._embedded.artists })
+      this.setState({ artObj: response.data._embedded.artists }) 
     }).catch(console.log);
   }
 
 render() {
-//  console.log(this.state.artObj)
+ console.log(this.state.artObj)
  
  let newArtObj = this.state.artObj.map((artObj, i) => {
    return(
@@ -33,7 +33,7 @@ render() {
         <p>{artObj.id}</p>
         <p>{artObj.name}</p>
         <p>{artObj.slug}</p>
-        {/* <img>{artObj.image_versions}</img> */}
+       
         </div> 
    )
   });
