@@ -1,8 +1,5 @@
 
 .App {
-  display: grid;
-  grid-template-areas: 200px 200px 200px;
-  grid-template-rows: 200px 200px 200px;
   text-align: center;
   background-color: #e8fefc;
 }

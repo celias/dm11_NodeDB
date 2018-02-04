@@ -8,6 +8,8 @@ color: palevioletred;
 
 export const GridContainer = styled.div`
 display: grid;
-grid-template-columns: repeat(4, 20%);
+grid-template-columns: repeat(5, 20%);
+grid-template-rows: repeat(5, 20%);
 cursor: pointer;
+
 `
