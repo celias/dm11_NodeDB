@@ -6,7 +6,7 @@ import InfoArt from './components/InfoArt';
 import axios from 'axios';
 
 
-import { AppTitle, GridContainer, NavLink, AppHeader, ArtDiv, TradeMark, Header, Img } from './styles';
+import { AppTitle, GridContainer, NavLink, AppHeader, ArtDiv, TradeMark, Header, Img, HoverZoom } from './styles';
 
 
 

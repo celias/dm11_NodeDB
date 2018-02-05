@@ -1,5 +1,5 @@
 
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const AppTitle = styled.h1`
 font-size: 55px;
@@ -20,6 +20,7 @@ display: grid;
   grid-auto-rows: minmax(150px, auto);
   grid-gap: 20px;
   grip-row-gap: 20px;
+  grid-column-gap: 20px;
 grid-column-row: span 5;
 cursor: pointer;
 margin-right: 5%;
@@ -85,8 +86,17 @@ flex-wrap: no-wrap;
 `
 
 export const Img = styled.img`
-border-radius: 50%;
+border-radius: 0;
 display: flex;
 justify-content: space-between;
-border: white outset 2px;
+`
+export const HoverZoom = keyframes`
+-webkit-transform: scale(1); 
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1); 
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1);  
+
 `
