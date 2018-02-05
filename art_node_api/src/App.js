@@ -6,7 +6,7 @@ import InfoArt from './components/InfoArt';
 import axios from 'axios';
 
 
-import { AppTitle, GridContainer, NavLink, AppHeader, ArtDiv } from './styles';
+import { AppTitle, GridContainer, NavLink, AppHeader, ArtDiv, TradeMark, Header } from './styles';
 
 
 
@@ -78,8 +78,10 @@ render() {
 
     return (
       <div className="App">
+      <Header>
           <AppTitle>Found.</AppTitle>
-          
+          <TradeMark>&trade;</TradeMark>
+      </Header>  
         {/* <NavLink>
           Home
           Home

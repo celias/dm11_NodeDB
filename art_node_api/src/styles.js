@@ -7,11 +7,10 @@ color: white;
 font-weight: 700;
 font-family: 'Shrikhand', cursive;
 display: flex;
-justify-content: flex-start;
-align-content: space-around;
+
 margin: 0 auto;
 margin-left: 5%;
-margin-top: 1%;
+margin-top: 3%;
 `
 
 export const GridContainer = styled.div`
@@ -22,7 +21,9 @@ display: grid;
 grid-column-row: span 5;
 cursor: pointer;
 margin-right: 5%;
-
+margin-left: 5%;
+overflow: hidden;
+overflow-x: hidden;
 `
 
 // export const NavLink = styled.nav`
@@ -44,7 +45,7 @@ export const ArtDiv = styled.div`
 margin-left 4%;
 background-color: black;
 color: white;
-padding: 10px;
+padding: 12px;
 max-width: 1000px;
 max-height: 1000px;
   
@@ -65,4 +66,18 @@ font-family: 'Roboto', sans-serif;
 export const LocationDiv = styled.p`
 font-size: 20px;
 font-family: 'Roboto', sans-serif;
+`
+export const TradeMark = styled.p`
+display: flex;
+align-self: flex-start;
+margin-right: 1630px;
+margin-top: 3.5%;
+color: white;
+font-size: 20px;
+`
+export const Header = styled.header`
+display: flex;
+align-items: flex-start;
+flex-wrap: no-wrap;
+
 `
