@@ -8,7 +8,7 @@ axios
   }).catch(console.log);
 
 const getArtsy = (req, res, next) => {
-    axios.get(`https://api.artsy.net:443/api/artists?similar_to_artist_id=4df69349bc3cf10001000726&sort=_slugs&size=12&page=1`).then(response => {
+    axios.get(`https://api.artsy.net:443/api/artists?similarity_type=contemporary&artworks=true&sort=-trending&size=200&page=1`).then(response => {
         console.log(response.data)
         return res.json(response.data);
           }).catch(console.log);

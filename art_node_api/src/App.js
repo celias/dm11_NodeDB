@@ -6,7 +6,7 @@ import InfoArt from './components/InfoArt';
 import axios from 'axios';
 
 
-import { AppTitle, GridContainer, NavLink, AppHeader } from './styles';
+import { AppTitle, GridContainer, NavLink, AppHeader, ArtDiv } from './styles';
 
 
 
@@ -78,17 +78,18 @@ render() {
 
     return (
       <div className="App">
-          <AppTitle>fuck my life</AppTitle>
-          <img src={logo} className="App-logo" alt="logo" />
-        <NavLink>
+          <AppTitle>Found.</AppTitle>
+          
+        {/* <NavLink>
           Home
           Home
           Hell
-        </NavLink>
+        </NavLink> */}
+        
+        <ArtDiv>
        { this.state.showInfo && <InfoArt currItem={this.state.artObj[this.state.currID]} />} 
-        
-        
-          <AppTitle>##############</AppTitle>
+       </ArtDiv>
+        <br />
         
         {/* {newArtObj} */} 
         
