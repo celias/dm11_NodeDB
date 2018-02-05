@@ -26,6 +26,7 @@ cursor: pointer;
 margin-right: 5%;
 margin-left: 5%;
 overflow: auto;
+padding: 25px;
 
 `
 
@@ -89,6 +90,7 @@ export const Img = styled.img`
 border-radius: 0;
 display: flex;
 justify-content: space-between;
+border: 2px solid white;
 `
 export const HoverZoom = keyframes`
 -webkit-transform: scale(1); 
@@ -99,4 +101,13 @@ export const HoverZoom = keyframes`
     transition: all 200ms ease-in;
     transform: scale(1);  
 
+`
+
+export const Footer = styled.footer`
+display: flex;
+width: 20%;
+height: 50px;
+justify-content: center;
+background-color: black;
+margin-left: 75%;
 `

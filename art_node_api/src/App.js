@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import InfoArt from './components/InfoArt';
+import ArtList from './components/ArtList';
 
 import axios from 'axios';
 
 
-import { AppTitle, GridContainer, NavLink, AppHeader, ArtDiv, TradeMark, Header, Img, HoverZoom } from './styles';
-
+import { AppTitle, GridContainer, NavLink, AppHeader, ArtDiv, TradeMark, Header, Img, HoverZoom, Footer } from './styles';
+let FontAwesome = require('react-fontawesome');
 
 
 class App extends Component {
@@ -18,10 +19,13 @@ class App extends Component {
       artObj: [], 
       artImgs: [],
       currID: undefined, 
-      showInfo: false
+      showInfo: false,
+      likeTheArt: false,
+      currLike: undefined
   }
 
   this.artImgInfo = this.artImgInfo.bind(this);
+  this.LikeArt = this.LikeArt.bind(this);
 
 };
 
@@ -40,6 +44,10 @@ class App extends Component {
     //   .then(response => {
     //     this.setState({ artObj: response.data._embedded.artists })
     //   }).catch(console.log);
+  }
+
+  LikeArt(X){
+    this.setState({currLike: X, likeTheArt: true})
   }
 
 
@@ -98,9 +106,9 @@ render() {
         
        
         <GridContainer>{newArtImg}</GridContainer>
-      
-  
-
+      <Footer>
+        {/* <i className="fab fa-github-alt" /> */}
+        </Footer>
       </div>
     );
   }
