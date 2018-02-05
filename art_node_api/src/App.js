@@ -6,7 +6,7 @@ import InfoArt from './components/InfoArt';
 import axios from 'axios';
 
 
-import { AppTitle, GridContainer, NavLink, AppHeader, ArtDiv, TradeMark, Header } from './styles';
+import { AppTitle, GridContainer, NavLink, AppHeader, ArtDiv, TradeMark, Header, Img } from './styles';
 
 
 
@@ -69,7 +69,7 @@ render() {
 
       <div key={i}>
       
-      <img onClick={()=>this.artImgInfo(i)} src={artObj._links.thumbnail.href} alt="art"></img>
+      <Img onClick={()=>this.artImgInfo(i)} src={artObj._links.thumbnail.href} alt="art"></Img>
       
       </div>
     )

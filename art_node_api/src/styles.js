@@ -16,14 +16,16 @@ margin-top: 3%;
 export const GridContainer = styled.div`
 display: grid;
   margin: 0 auto;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
   grid-auto-rows: minmax(150px, auto);
+  grid-gap: 20px;
+  grip-row-gap: 20px;
 grid-column-row: span 5;
 cursor: pointer;
 margin-right: 5%;
 margin-left: 5%;
-overflow: hidden;
-overflow-x: hidden;
+overflow: auto;
+
 `
 
 // export const NavLink = styled.nav`
@@ -80,4 +82,11 @@ display: flex;
 align-items: flex-start;
 flex-wrap: no-wrap;
 
+`
+
+export const Img = styled.img`
+border-radius: 50%;
+display: flex;
+justify-content: space-between;
+border: white outset 2px;
 `
