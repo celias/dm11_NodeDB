@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+
 import InfoArt from './components/InfoArt';
-import ArtList from './components/ArtList';
+import AddToList from './components/AddToList';
 
 import axios from 'axios';
 
 
 import { AppTitle, GridContainer, NavLink, AppHeader, ArtDiv, TradeMark, Header, Img, HoverZoom, Footer } from './styles';
-let FontAwesome = require('react-fontawesome');
+
 
 
 class App extends Component {
@@ -20,12 +21,10 @@ class App extends Component {
       artImgs: [],
       currID: undefined, 
       showInfo: false,
-      likeTheArt: false,
-      currLike: undefined
   }
 
   this.artImgInfo = this.artImgInfo.bind(this);
-  this.LikeArt = this.LikeArt.bind(this);
+  this.addArt = this.addArt.bind(this)
 
 };
 
@@ -39,35 +38,31 @@ class App extends Component {
 
   artImgInfo(ID){
     this.setState({currID: ID, showInfo: true})
-   
-    // axios.get('/api/apiData')
-    //   .then(response => {
-    //     this.setState({ artObj: response.data._embedded.artists })
-    //   }).catch(console.log);
   }
-
-  LikeArt(X){
-    this.setState({currLike: X, likeTheArt: true})
-  }
-
-
-
   
+  addArt(item){
+    axios.post(`/api/art/${item.id}`,
+  {img: item._links.thumbnail.href, name: item.name}
+
+)
+    .then(response => {
+        console.log(response.data)
+      
+    })
+    .catch(console.log)
+  }
+
+
+
+
 
 render() {
- console.log(this.state.artObj)
- console.log(this.artImgs)
+let newArtObj = this.state.artObj.map((artObj, i) => {
 
-
- let newArtObj = this.state.artObj.map((artObj, i) => {
    return(
-      <div key={i}>
-        {/* {/* <p>{artObj.id}</p> */}
-        {/* <p>{artObj.name}</p> */}
-        {/* <img alt="art">{artObj._links.thumbnail.href}</img> */}
-        {/* <p>{artObj.slug}</p> */}
-        {/* <p>{artObj.image_versions}</p> */}
-        </div> 
+      <div key={i} />
+  
+       
    )
   });
 
@@ -96,19 +91,22 @@ render() {
           Hell
         </NavLink> */}
         
-        <ArtDiv>
-       { this.state.showInfo && <InfoArt currItem={this.state.artObj[this.state.currID]} />} 
+        <ArtDiv> 
+       { this.state.showInfo && <InfoArt addArt={this.addArt} currItem={this.state.artObj[this.state.currID]} />} 
        </ArtDiv>
         <br />
         
-        {/* {newArtObj} */} 
-        
         
        
-        <GridContainer>{newArtImg}</GridContainer>
-      <Footer>
-        {/* <i className="fab fa-github-alt" /> */}
-        </Footer>
+        
+    
+        
+    <GridContainer>{newArtImg}</GridContainer>
+      
+      
+      <Footer />
+        
+       
       </div>
     );
   }

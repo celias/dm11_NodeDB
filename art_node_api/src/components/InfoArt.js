@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { NameDiv, BioDiv, LocationDiv } from '../styles';
+import AddToList from './AddToList';
 
 
 const InfoArt = (props) => {
@@ -10,6 +12,9 @@ const InfoArt = (props) => {
         <LocationDiv>{props.currItem.location}</LocationDiv>
         <br />
         <BioDiv>{props.currItem.biography}</BioDiv>
+        
+        <AddToList addArt={props.addArt} favorited={props.currItem} />
+
         </div>
     )
 }
